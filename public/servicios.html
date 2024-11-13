@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Greencycling</title>
+    <link rel="stylesheet" href="/styles.8986bff4.css">
+</head>
+<body>
+    <!-- Encabezado con el título y el icono del menú -->
+    <header>
+        <h1 class="title">
+            <a href="/index.html" class="title-link">Greencycling</a>
+        </h1>
+        <div class="icon" onclick="toggleMenu()">☰</div>
+        <!-- Menú desplegable -->
+        <nav class="menu" id="dropdown-menu">
+            <a href="/ccu.html">CCU</a>
+            <a href="/contacto.html">Contacto</a>
+            <a href="/materiales.html">Materiales</a>
+            <a href="/pqrs.html">PQRS</a>
+            <a href="/rutas.html">Rutas</a>
+            <a href="/servicios.html">Servicios</a>
+            <a href="/sobre-nosotros.html">Sobre Nosotros</a>
+        </nav>
+    </header>
+
+    <!-- Sección de Servicios -->
+    <main class="container">
+        <section class="services-section">
+            <!-- Bloque de la imagen en la izquierda -->
+            <div class="image-container">
+                <img src="https://i.pinimg.com/564x/2f/59/a4/2f59a4a6d568acc86a33f7e9c4a5987b.jpg" alt="Imagen de servicios" class="service-image">
+            </div>
+            <!-- Bloque de texto en la derecha -->
+            <div class="text-container">
+                <h2 class="subtitle">Nuestros Servicios</h2>
+                <p>Ofrecemos los siguientes servicios para el aprovechamiento:</p>
+                <ul>
+                    <li>Recuperación y transporte</li>
+                    <li>Clasificación, pesaje y almacenamiento</li>
+                    <li>Comercialización</li>
+                </ul>
+                <p>¿Estás interesado en alguno de nuestros servicios?</p>
+            </div>
+        </section>
+
+        <!-- Botón de WhatsApp centrado debajo de la sección de servicios -->
+        <div class="contact-button">
+            <a href="https://wa.me/1234567890" target="_blank">Haz clic aquí para comunicarte con un representante</a>
+        </div>
+    </main>
+
+    <!-- Script para el funcionamiento del menú desplegable -->
+    <script>function toggleMenu() {
+  var menu = document.getElementById('dropdown-menu');
+  menu.classList.toggle('show');
+}</script>
+</body>
+</html>

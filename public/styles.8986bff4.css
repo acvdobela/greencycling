@@ -1,0 +1,571 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.title-link {
+    font-size: 45px; /* Set the font size to 45px */
+    color: black;
+    text-decoration: none;
+}
+
+.icon {
+    font-size: 1.5em;
+    cursor: pointer;
+    color: black;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: #4CAF50;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
+    display: block;
+}
+
+.menu.show {
+    display: flex;
+}
+
+/* Burger Menu Styles */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+}
+
+/* Show burger menu on small screens */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+}
+
+/* Contenedor principal */
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Estilos específicos de páginas */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2em; /* Set a consistent size for h1 */
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Styles for the welcome section */
+.welcome-section {
+    display: flex;
+    align-items: stretch; /* Make sure items stretch to the same height */
+    padding: 20px;
+    gap: 20px; /* Add some space between the text and the image */
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    align-items: center; /* Center the image vertically */
+    justify-content: center; /* Center the image horizontally */
+}
+
+.text-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the text vertically */
+}
+
+.small-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Estilos para la página de materiales */
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.material-item {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}
+
+.material-item img {
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    max-height: 150px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.material-item h2 {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+/* Tooltip (Texto oculto) */
+.tooltip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 0.9em;
+    padding: 8px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s, transform 0.3s;
+    border-radius: 0 0 5px 5px;
+}
+
+/* Muestra el tooltip en hover */
+.material-item:hover .tooltip,
+.material-item:focus .tooltip {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilos para pantallas táctiles (muestra siempre el tooltip) */
+@media (hover: none) {
+    .tooltip {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para otras páginas */
+.services-container {
+    display: flex;
+    gap: 20px;
+}
+
+.services-container img {
+    width: 50%;
+    border-radius: 10px;
+}
+
+.services-content {
+    width: 50%;
+}
+
+/* Styles for the services section */
+.services-section {
+    display: flex;
+    align-items: stretch; /* Make sure items stretch to the same height */
+    padding: 20px;
+    gap: 40px; /* Add more space between the text and the image */
+}
+
+.services-image-container {
+    flex: 1;
+    display: flex;
+    align-items: center; /* Center the image vertically */
+    justify-content: flex-start; /* Move the image further to the left */
+    margin-right: 20px; /* Add some margin to the right of the image */
+}
+
+.services-text-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the text vertically */
+    gap: 20px; /* Add more space between text elements */
+}
+
+.services-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .services-section {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .services-image-container,
+    .services-text-container {
+        width: 100%; /* Make both containers take full width */
+    }
+
+    .services-image {
+        width: 100%; /* Make the image take full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* Button styles */
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Button styles */
+.green-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.green-button:hover {
+    background-color: #45a049;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    .materials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-container {
+        flex-direction: column;
+    }
+
+    .services-container img,
+    .services-content {
+        width: 100%;
+    }
+
+    .container-contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .map-section,
+    .contact-info {
+        width: 100%;
+    }
+
+    .welcome-section,
+    .container-contact {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .image-container,
+    .text-container,
+    .map-section,
+    .contact-info {
+        width: 100%; /* Make both containers take full width */
+    }
+
+    .small-image {
+        width: 100%; /* Make the image take full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* Consistent title styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif; /* Ensure consistent font family */
+    color: #333; /* Ensure consistent color */
+}
+
+h2 {
+    font-size: 1.75em; /* Set a consistent size for h2 */
+}
+
+h3 {
+    font-size: 1.5em; /* Set a consistent size for h3 */
+}
+
+h4 {
+    font-size: 1.25em; /* Set a consistent size for h4 */
+}
+
+h5 {
+    font-size: 1em; /* Set a consistent size for h5 */
+}
+
+h6 {
+    font-size: 0.875em; /* Set a consistent size for h6 */
+}
+
+.pqrs-container {
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.pqrs-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.pqrs-form label {
+    grid-column: 1 / 3;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.pqrs-form input[type="text"],
+.pqrs-form input[type="email"],
+.pqrs-form input[type="tel"],
+.pqrs-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.pqrs-form input[type="text"]:nth-child(1),
+.pqrs-form input[type="email"] {
+    grid-column: 1 / 2;
+}
+
+.pqrs-form input[type="tel"] {
+    grid-column: 2 / 3;
+}
+
+.pqrs-form textarea {
+    grid-column: 1 / 3;
+    height: 100px;
+}
+
+.pqrs-form button {
+    grid-column: 2 / 3;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    justify-self: end;
+}
+
+/* Container for the contact section */
+.container-contact {
+    display: flex;
+    flex-direction: row; /* Arrange items in a row */
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px; /* Add some space between the map and the contact info */
+    padding: 20px;
+}
+
+/* Map section styles */
+.map-section {
+    flex: 1; /* Allow the map section to grow */
+    min-width: 300px; /* Set a minimum width for the map */
+    height: 400px; /* Set a fixed height for the map */
+}
+
+/* Contact info styles */
+.contact-info {
+    flex: 1; /* Allow the contact info section to grow */
+    max-width: 400px; /* Set a maximum width for the contact info */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .container-contact {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .map-section {
+        width: 100%; /* Make the map take full width */
+        height: 300px; /* Adjust the height as needed */
+    }
+
+    .contact-info {
+        width: 100%; /* Make the contact info take full width */
+        max-width: none; /* Remove the max-width constraint */
+    }
+}
+.contact-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    text-decoration: none;
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 1.1em;
+}
+
+.contact-button a:hover {
+    background-color: #45a049; /* Color de fondo al hacer hover */
+}
+/* Contenedor principal */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px; /* Ancho máximo del contenido */
+    margin: 0 auto;
+    padding: 20px;
+    gap: 40px; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilos para la imagen */
+.main-content img {
+    max-width: 100%;
+    width: 300px; /* Ancho fijo para hacer la imagen más pequeña */
+    height: auto;
+    align-self: center; /* Centra verticalmente la imagen */
+}
+
+/* Contenedor de texto */
+.text-content {
+    flex: 1; /* Ocupa el espacio restante para evitar que el texto se vea estrecho */
+    max-width: 600px; /* Ancho máximo del texto */
+}
+
+/* Estilos del botón */
+.contact-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+}
+
+.contact-button a:hover {
+    background-color: #45a049;
+}
+/* Contenedor principal de PQRS */
+.pqrs-container {
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    flex-direction: column;
+    min-height: 80vh; /* Ajuste de altura mínima para centrar verticalmente */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Estilos del formulario */
+.pqrs-form {
+    max-width: 500px; /* Ancho máximo del formulario */
+    width: 100%; /* Ancho completo hasta el máximo */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los campos de entrada y el botón */
+.pqrs-form label {
+    display: block;
+    margin-top: 10px;
+    text-align: left; /* Alinear el texto del label a la izquierda */
+    font-weight: bold;
+}
+
+.pqrs-form input,
+.pqrs-form textarea,
+.pqrs-form button {
+    width: 100%; /* Ancho completo para los campos de entrada */
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el padding no aumente el ancho */
+    font-size: 1em;
+}
+
+.pqrs-form textarea {
+    resize: vertical; /* Permitir que el área de texto se redimensione solo verticalmente */
+}
+
+.pqrs-form button {
+    background-color: #4CAF50; /* Color de fondo del botón */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.pqrs-form button:hover {
+    background-color: #45a049; /* Color de fondo al hacer hover en el botón */
+}
+
+
+
+/*# sourceMappingURL=/styles.8986bff4.css.map */

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutas - Greencycling</title>
+    <link rel="stylesheet" href="/styles.8986bff4.css">
+</head>
+<body>
+    <!-- Encabezado con el título y el icono del menú -->
+    <header>
+        <h1 class="title">
+            <a href="/index.html" class="title-link">Greencycling</a>
+        </h1>
+        <div class="icon" onclick="toggleMenu()">☰</div>
+        <!-- Menú desplegable -->
+        <nav class="menu" id="dropdown-menu">
+            <a href="/ccu.html">CCU</a>
+            <a href="/contacto.html">Contacto</a>
+            <a href="/materiales.html">Materiales</a>
+            <a href="/pqrs.html">PQRS</a>
+            <a href="/rutas.html">Rutas</a>
+            <a href="/servicios.html">Servicios</a>
+            <a href="/sobre-nosotros.html">Sobre Nosotros</a>
+        </nav>
+    </header>
+
+    <!-- Sección de Rutas -->
+    <main class="container">
+        <section class="routes-section">
+            <h2 class="subtitle">Nuestra ruta de recuperación</h2>
+            <p>
+                En las siguientes imágenes pueden observar las rutas que recorremos para recuperar el material aprovechable proveniente de los hogares de Medellín.
+            </p>
+            <!-- Imagen de la ruta -->
+            <div class="image-container">
+                <img src="/ruta-recuperacion.41393865.png" alt="Ruta de recuperación" class="route-image">
+            </div>
+        </section>
+    </main>
+
+    <!-- Script para el funcionamiento del menú desplegable -->
+    <script>function toggleMenu() {
+  var menu = document.getElementById('dropdown-menu');
+  menu.classList.toggle('show');
+}</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Greencycling</title>
+    <!-- Enlaces a Google Fonts para la tipografía Playfair Display y Lato -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap">
+    <link rel="stylesheet" href="/styles.8986bff4.css">
+<script src="/styles.8986bff4.js"></script></head>
+<body>
+    <header>
+        <h1 class="title">
+            <a href="/index.html" class="title-link">Greencycling</a>
+        </h1>
+        <div class="icon" onclick="toggleMenu()">☰</div>
+        <!-- Menú desplegable -->
+        <nav class="menu" id="dropdown-menu">
+            <a href="/ccu.html">CCU</a>
+            <a href="/contacto.html">Contacto</a>
+            <a href="/materiales.html">Materiales</a>
+            <a href="/pqrs.html">PQRS</a>
+            <a href="/rutas.html">Rutas</a>
+            <a href="/servicios.html">Servicios</a>
+            <a href="/sobre-nosotros.html">Sobre Nosotros</a>
+        </nav>
+    </header>
+
+    <!-- Sección de bienvenida -->
+    <main class="container">
+        <section class="welcome-section">
+            <div class="text-container">
+                <h2 class="subtitle">Todo lo que necesitas saber de reciclaje está aquí</h2>
+                <p>
+                    Bienvenido a <em>Greencycling</em>, somos prestadores del servicio público de aseo en el componente de aprovechamiento en el municipio de Medellín.
+                </p>
+                <p>
+                    En esta página podrás encontrar toda nuestra información y el trabajo que realizamos en la ciudad, además de distintos tips y consejos para la separación de los residuos sólidos.
+                </p>
+            </div>
+            <div class="image-container">
+                <img src="https://i.pinimg.com/originals/b9/0d/5f/b90d5f568bbdc17f82ad89a755c4c9f5.jpg" alt="Ícono de reciclaje pequeño" class="small-image">
+            </div>
+        </section>
+    </main>
+
+    <!-- Script para el funcionamiento del menú desplegable -->
+    <script>function toggleMenu() {
+  var menu = document.getElementById('dropdown-menu');
+  menu.classList.toggle('show');
+}</script>
+</body>
+</html>
